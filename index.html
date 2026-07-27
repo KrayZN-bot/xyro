@@ -8,13 +8,15 @@
 
 <title>Xyro</title>
 
+<script src="https://unpkg.com/lucide@latest"></script>
+
 <style>
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Inter, Arial, sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter,Arial,sans-serif;
 }
 
 
@@ -25,7 +27,7 @@ body {
     background:
     radial-gradient(
         circle at top,
-        rgba(0,255,200,0.15),
+        rgba(0,255,213,.12),
         transparent 45%
     ),
 
@@ -45,7 +47,22 @@ body {
 
 nav {
 
-    height:90px;
+    position:fixed;
+
+    top:25px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    width:90%;
+
+    max-width:1200px;
+
+    height:70px;
+
+    padding:0 25px;
+
 
     display:flex;
 
@@ -53,12 +70,31 @@ nav {
 
     justify-content:space-between;
 
-    padding:0 7%;
+
+    background:
+
+    rgba(255,255,255,.04);
+
+
+    border:
+
+    1px solid rgba(255,255,255,.08);
+
+
+    backdrop-filter:blur(25px);
+
+
+    border-radius:22px;
+
+
+    z-index:100;
+
 
 }
 
 
-.logo {
+
+.nav-left {
 
     display:flex;
 
@@ -66,18 +102,19 @@ nav {
 
     gap:12px;
 
-    font-size:24px;
+    font-size:22px;
 
     font-weight:800;
 
 }
 
 
-.logo img {
 
-    width:50px;
+.nav-left img {
 
-    height:50px;
+    width:42px;
+
+    height:42px;
 
     object-fit:contain;
 
@@ -85,41 +122,105 @@ nav {
 
 
 
-.links {
+.nav-links {
 
     display:flex;
 
-    gap:35px;
+    gap:32px;
 
 }
 
 
-.links a {
 
-    color:#9ba8af;
+.nav-links a {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+
+    color:#89949b;
 
     text-decoration:none;
+
+    font-size:15px;
 
     transition:.3s;
 
 }
 
 
-.links a:hover {
+.nav-links a:hover,
+.nav-links .active {
 
     color:white;
 
 }
 
 
+.nav-links svg {
 
-.login {
+    width:16px;
 
-    padding:12px 25px;
+    height:16px;
 
-    border-radius:12px;
+}
 
-    border:1px solid rgba(255,255,255,.15);
+
+
+.discord {
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+
+    padding:12px 22px;
+
+    border-radius:14px;
+
+
+    text-decoration:none;
+
+    color:white;
+
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #00ffd5,
+        #00aaff
+    );
+
+
+    font-weight:700;
+
+
+    box-shadow:
+
+    0 0 30px rgba(0,255,213,.25);
+
+
+    transition:.3s;
+
+}
+
+
+.discord:hover {
+
+    transform:translateY(-3px);
+
+}
+
+
+.discord svg {
+
+    width:18px;
 
 }
 
@@ -130,13 +231,16 @@ nav {
 
 .hero {
 
-    height:650px;
+    min-height:100vh;
+
+    padding-top:120px;
+
 
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
     flex-direction:column;
 
@@ -145,19 +249,25 @@ nav {
 }
 
 
+
 .hero h1 {
 
     max-width:1000px;
 
-    font-size:72px;
+
+    font-size:75px;
+
 
     line-height:1.05;
 
-    letter-spacing:-4px;
 
     font-weight:900;
 
+
+    letter-spacing:-4px;
+
 }
+
 
 
 .gradient {
@@ -170,7 +280,9 @@ nav {
         #00aaff
     );
 
+
     -webkit-background-clip:text;
+
 
     color:transparent;
 
@@ -180,13 +292,17 @@ nav {
 
 .hero p {
 
-    margin-top:35px;
+    margin-top:30px;
+
 
     max-width:650px;
 
-    font-size:20px;
 
     color:#9ca8af;
+
+
+    font-size:20px;
+
 
     line-height:1.7;
 
@@ -194,29 +310,47 @@ nav {
 
 
 
-.hero button {
+.button {
+
 
     margin-top:40px;
 
-    padding:16px 50px;
+
+    padding:16px 45px;
+
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
 
     border-radius:14px;
 
+
     border:2px solid #00ffd5;
+
 
     background:#000A14;
 
+
     color:white;
+
 
     font-size:16px;
 
+
     font-weight:700;
+
 
     cursor:pointer;
 
+
     box-shadow:
 
-    0 0 40px rgba(0,255,213,.35);
+    0 0 35px rgba(0,255,213,.3);
+
 
 }
 
@@ -257,15 +391,22 @@ nav {
 
     height:250px;
 
-    border-radius:22px;
 
     overflow:hidden;
 
-    background:rgba(255,255,255,.04);
 
-    border:1px solid rgba(255,255,255,.1);
+    border-radius:22px;
 
-    backdrop-filter:blur(20px);
+
+    border:
+
+    1px solid rgba(255,255,255,.1);
+
+
+    background:
+
+    rgba(255,255,255,.04);
+
 
 }
 
@@ -276,6 +417,7 @@ nav {
     width:100%;
 
     height:100%;
+
 
     object-fit:cover;
 
@@ -301,35 +443,36 @@ nav {
 
 
 
-@media(max-width:800px){
+@media(max-width:900px){
 
-.hero h1 {
 
-    font-size:45px;
+.nav-links {
+
+display:none;
 
 }
 
 
-.links {
+.hero h1 {
 
-    display:none;
+font-size:45px;
 
 }
 
 
 .card {
 
-    width:300px;
+width:300px;
 
-    height:180px;
+height:180px;
 
 }
+
 
 }
 
 
 </style>
-
 
 </head>
 
@@ -337,9 +480,11 @@ nav {
 <body>
 
 
+
 <nav>
 
-<div class="logo">
+
+<div class="nav-left">
 
 <img src="assets/logo.png">
 
@@ -348,27 +493,61 @@ nav {
 </div>
 
 
-<div class="links">
 
-<a href="#">Home</a>
+<div class="nav-links">
 
-<a href="#">Features</a>
 
-<a href="#">Products</a>
+<a class="active" href="#">
 
-<a href="#">Resources</a>
+<i data-lucide="home"></i>
+
+Home
+
+</a>
+
+
+<a href="#">
+
+<i data-lucide="box"></i>
+
+Products
+
+</a>
+
+
+<a href="#">
+
+<i data-lucide="sparkles"></i>
+
+Features
+
+</a>
+
+
+<a href="#">
+
+<i data-lucide="book-open"></i>
+
+Docs
+
+</a>
+
 
 </div>
 
 
-<div class="login">
 
-Login
+<a class="discord" href="#">
 
-</div>
+<i data-lucide="message-circle"></i>
+
+Discord
+
+</a>
 
 
 </nav>
+
 
 
 
@@ -389,6 +568,7 @@ Roblox communities
 </h1>
 
 
+
 <p>
 
 Xyro gives ERLC communities powerful tools,
@@ -397,7 +577,10 @@ automation and systems built for modern servers.
 </p>
 
 
-<button>
+
+<button class="button">
+
+<i data-lucide="rocket"></i>
 
 Get Started
 
@@ -409,14 +592,10 @@ Get Started
 
 
 
+
 <div class="slider">
 
-
-<div class="showcase" id="showcase">
-
-
-</div>
-
+<div class="showcase" id="showcase"></div>
 
 </div>
 
@@ -425,6 +604,10 @@ Get Started
 
 
 <script>
+
+
+lucide.createIcons();
+
 
 
 const images = [
@@ -442,12 +625,10 @@ const showcase = document.getElementById("showcase");
 
 
 
-// Create cards
-
 images.concat(images).forEach((img)=>{
 
 
-const card = document.createElement("div");
+let card = document.createElement("div");
 
 
 card.className="card";
@@ -467,7 +648,6 @@ showcase.appendChild(card);
 
 
 </script>
-
 
 
 </body>
