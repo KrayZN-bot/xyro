@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Xyro</title>
+
+<style>
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Inter, Arial, sans-serif;
+}
+
+body {
+
+    min-height:100vh;
+
+    background:
+    radial-gradient(circle at top,
+    #001526,
+    transparent 40%),
+
+    linear-gradient(
+    135deg,
+    #00060D,
+    #000A14
+    );
+
+    color:white;
+
+}
+
+
+header {
+
+    padding:40px;
+
+    display:flex;
+    align-items:center;
+    gap:20px;
+
+}
+
+
+.logo {
+
+    width:80px;
+    height:80px;
+
+    object-fit:contain;
+
+}
+
+
+.title {
+
+    font-size:38px;
+    font-weight:800;
+
+}
+
+
+.container {
+
+    padding:40px;
+
+}
+
+
+.card {
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border:1px solid rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(15px);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+}
+
+
+.card h2 {
+
+    margin-bottom:20px;
+
+}
+
+
+
+.carousel {
+
+    display:flex;
+
+    gap:20px;
+
+    overflow:hidden;
+
+}
+
+
+
+.slide {
+
+    min-width:300px;
+
+    height:170px;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    animation:scroll 20s linear infinite;
+
+}
+
+
+.slide img {
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+
+
+@keyframes scroll {
+
+0% {
+transform:translateX(0);
+}
+
+100% {
+transform:translateX(-1200px);
+}
+
+}
+
+
+
+footer {
+
+text-align:center;
+opacity:.5;
+padding:30px;
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="assets/logo.png" class="logo">
+
+<div class="title">
+Xyro
+</div>
+
+
+</header>
+
+
+
+<div class="container">
+
+
+<div class="card">
+
+<h2>Featured</h2>
+
+<div class="carousel" id="featured">
+
+</div>
+
+
+</div>
+
+
+
+<div class="card">
+
+<h2>Game Images</h2>
+
+<div class="carousel" id="games">
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<footer>
+
+Xyro © 2026
+
+</footer>
+
+
+
+<script>
+
+
+async function loadImages(){
+
+
+const data = await fetch(
+"assets/images.json"
+)
+.then(r=>r.json());
+
+
+
+function create(section, folder){
+
+
+let area=document.getElementById(section);
+
+
+data[folder].forEach(img=>{
+
+
+let div=document.createElement("div");
+
+div.className="slide";
+
+
+div.innerHTML=`
+
+<img src="${img}">
+
+`;
+
+
+area.appendChild(div);
+
+
+});
+
+
+}
+
+
+
+create(
+"featured",
+"banner"
+);
+
+
+
+create(
+"games",
+"games"
+);
+
+
+
+}
+
+
+loadImages();
+
+
+</script>
+
+
+
+</body>
+</html>
