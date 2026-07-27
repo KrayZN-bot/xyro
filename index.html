@@ -19,6 +19,7 @@
     font-family:Inter,Arial,sans-serif;
 }
 
+
 body {
 
     min-height:100vh;
@@ -26,7 +27,7 @@ body {
     background:
     radial-gradient(
         circle at top,
-        rgba(0,255,213,0.13),
+        rgba(0,255,213,.13),
         transparent 45%
     ),
 
@@ -40,6 +41,7 @@ body {
     overflow-x:hidden;
 
 }
+
 
 
 /* NAVBAR */
@@ -68,19 +70,25 @@ nav {
 
     justify-content:space-between;
 
+
     background:
     rgba(255,255,255,.04);
+
 
     border:
     1px solid rgba(255,255,255,.08);
 
+
     backdrop-filter:blur(25px);
 
+
     border-radius:22px;
+
 
     z-index:100;
 
 }
+
 
 
 .nav-left {
@@ -96,6 +104,7 @@ nav {
     font-weight:800;
 
 }
+
 
 
 .nav-left img {
@@ -119,6 +128,7 @@ nav {
 }
 
 
+
 .nav-links a {
 
     display:flex;
@@ -127,9 +137,9 @@ nav {
 
     gap:8px;
 
-    color:#89949b;
-
     text-decoration:none;
+
+    color:#89949b;
 
     font-size:15px;
 
@@ -138,12 +148,14 @@ nav {
 }
 
 
+
 .nav-links a:hover,
 .nav-links .active {
 
     color:white;
 
 }
+
 
 
 .nav-links svg {
@@ -155,7 +167,10 @@ nav {
 }
 
 
+
+
 /* SEARCH */
+
 
 .search {
 
@@ -171,15 +186,21 @@ nav {
 
     padding:0 15px;
 
+
     border-radius:14px;
 
+
     background:
+
     rgba(255,255,255,.05);
 
+
     border:
+
     1px solid rgba(255,255,255,.1);
 
 }
+
 
 
 .search svg {
@@ -189,6 +210,7 @@ nav {
     color:#89949b;
 
 }
+
 
 
 .search input {
@@ -206,6 +228,7 @@ nav {
 }
 
 
+
 .search input::placeholder {
 
     color:#89949b;
@@ -213,7 +236,10 @@ nav {
 }
 
 
+
+
 /* HERO */
+
 
 .hero {
 
@@ -223,17 +249,20 @@ nav {
 
     padding-bottom:20px;
 
+
     display:flex;
 
-    justify-content:center;
-
     align-items:center;
+
+    justify-content:center;
 
     flex-direction:column;
 
     text-align:center;
 
 }
+
+
 
 
 .hero h1 {
@@ -251,6 +280,8 @@ nav {
 }
 
 
+
+
 .gradient {
 
     background:
@@ -261,11 +292,14 @@ nav {
         #00aaff
     );
 
+
     -webkit-background-clip:text;
 
     color:transparent;
 
 }
+
+
 
 
 .hero p {
@@ -283,7 +317,11 @@ nav {
 }
 
 
+
+
+
 /* SHOWCASE */
+
 
 .slider {
 
@@ -296,6 +334,7 @@ nav {
     margin-top:-70px;
 
 }
+
 
 
 .showcase {
@@ -311,6 +350,7 @@ nav {
 }
 
 
+
 .card {
 
     width:430px;
@@ -321,15 +361,18 @@ nav {
 
     overflow:hidden;
 
+
     border:
 
     1px solid rgba(255,255,255,.1);
+
 
     background:
 
     rgba(255,255,255,.04);
 
 }
+
 
 
 .card img {
@@ -341,3 +384,246 @@ nav {
     object-fit:cover;
 
 }
+
+
+
+
+@keyframes scroll {
+
+    from {
+
+        transform:translateX(0);
+
+    }
+
+
+    to {
+
+        transform:translateX(-50%);
+
+    }
+
+}
+
+
+
+
+@media(max-width:900px){
+
+
+.nav-links {
+
+    display:none;
+
+}
+
+
+.search {
+
+    width:160px;
+
+}
+
+
+.hero h1 {
+
+    font-size:45px;
+
+}
+
+
+.card {
+
+    width:300px;
+
+    height:180px;
+
+}
+
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<nav>
+
+
+<div class="nav-left">
+
+<img src="assets/logo.png">
+
+<span>Xyro</span>
+
+</div>
+
+
+
+<div class="nav-links">
+
+
+<a class="active" href="#">
+
+<i data-lucide="home"></i>
+
+Home
+
+</a>
+
+
+<a href="#">
+
+<i data-lucide="box"></i>
+
+Products
+
+</a>
+
+
+<a href="#">
+
+<i data-lucide="sparkles"></i>
+
+Features
+
+</a>
+
+
+<a href="#">
+
+<i data-lucide="book-open"></i>
+
+Docs
+
+</a>
+
+
+</div>
+
+
+
+
+<div class="search">
+
+<i data-lucide="search"></i>
+
+<input placeholder="Search Xyro...">
+
+</div>
+
+
+
+</nav>
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+
+Built for the next generation of
+
+<span class="hero">
+
+Roblox communities
+
+</span>
+
+
+</h1>
+
+
+
+<p>
+
+Xyro gives ERLC communities powerful tools,
+automation and systems built for modern servers. This bot / system is priorily used for United Kingdom and NOT United States.
+
+</p>
+
+
+</section>
+
+
+
+
+
+
+<div class="slider">
+
+
+<div class="showcase" id="showcase"></div>
+
+
+</div>
+
+
+
+
+
+
+<script>
+
+
+lucide.createIcons();
+
+
+
+const images = [
+
+"assets/showcase/image1.png",
+
+"assets/showcase/image2.png",
+
+"assets/showcase/image3.png"
+
+];
+
+
+
+const showcase = document.getElementById("showcase");
+
+
+
+images.concat(images).forEach(image => {
+
+
+const card = document.createElement("div");
+
+
+card.className = "card";
+
+
+card.innerHTML = `
+
+<img src="${image}">
+
+`;
+
+
+
+showcase.appendChild(card);
+
+
+});
+
+
+</script>
+
+
+
+</body>
+
+</html>
