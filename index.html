@@ -16,9 +16,8 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Inter, Arial, sans-serif;
+    font-family:Inter,Arial,sans-serif;
 }
-
 
 body {
 
@@ -30,6 +29,7 @@ body {
         rgba(0,255,213,0.13),
         transparent 45%
     ),
+
     linear-gradient(
         180deg,
         #000A14,
@@ -62,32 +62,25 @@ nav {
 
     padding:0 25px;
 
-
     display:flex;
 
     align-items:center;
 
     justify-content:space-between;
 
-
     background:
-    rgba(255,255,255,0.04);
-
+    rgba(255,255,255,.04);
 
     border:
-    1px solid rgba(255,255,255,0.08);
-
+    1px solid rgba(255,255,255,.08);
 
     backdrop-filter:blur(25px);
 
-
     border-radius:22px;
-
 
     z-index:100;
 
 }
-
 
 
 .nav-left {
@@ -126,7 +119,6 @@ nav {
 }
 
 
-
 .nav-links a {
 
     display:flex;
@@ -134,7 +126,6 @@ nav {
     align-items:center;
 
     gap:8px;
-
 
     color:#89949b;
 
@@ -155,7 +146,6 @@ nav {
 }
 
 
-
 .nav-links svg {
 
     width:16px;
@@ -163,7 +153,6 @@ nav {
     height:16px;
 
 }
-
 
 
 /* SEARCH */
@@ -176,24 +165,19 @@ nav {
 
     gap:10px;
 
-
     width:230px;
 
     height:42px;
 
-
     padding:0 15px;
-
 
     border-radius:14px;
 
-
     background:
-    rgba(255,255,255,0.05);
-
+    rgba(255,255,255,.05);
 
     border:
-    1px solid rgba(255,255,255,0.1);
+    1px solid rgba(255,255,255,.1);
 
 }
 
@@ -205,7 +189,6 @@ nav {
     color:#89949b;
 
 }
-
 
 
 .search input {
@@ -230,15 +213,15 @@ nav {
 }
 
 
-
 /* HERO */
 
 .hero {
 
-    min-height:100vh;
+    min-height:75vh;
 
     padding-top:120px;
 
+    padding-bottom:20px;
 
     display:flex;
 
@@ -251,7 +234,6 @@ nav {
     text-align:center;
 
 }
-
 
 
 .hero h1 {
@@ -269,7 +251,6 @@ nav {
 }
 
 
-
 .gradient {
 
     background:
@@ -280,7 +261,6 @@ nav {
         #00aaff
     );
 
-
     -webkit-background-clip:text;
 
     color:transparent;
@@ -288,25 +268,19 @@ nav {
 }
 
 
-
 .hero p {
 
     margin-top:30px;
 
-
     max-width:650px;
-
 
     color:#9ca8af;
 
-
     font-size:20px;
-
 
     line-height:1.7;
 
 }
-
 
 
 /* SHOWCASE */
@@ -317,10 +291,11 @@ nav {
 
     overflow:hidden;
 
-    padding-bottom:80px;
+    padding-bottom:40px;
+
+    margin-top:-70px;
 
 }
-
 
 
 .showcase {
@@ -336,31 +311,25 @@ nav {
 }
 
 
-
 .card {
 
     width:430px;
 
     height:250px;
 
-
     border-radius:22px;
-
 
     overflow:hidden;
 
-
     border:
 
-    1px solid rgba(255,255,255,0.1);
-
+    1px solid rgba(255,255,255,.1);
 
     background:
 
-    rgba(255,255,255,0.04);
+    rgba(255,255,255,.04);
 
 }
-
 
 
 .card img {
@@ -372,212 +341,3 @@ nav {
     object-fit:cover;
 
 }
-
-
-
-@keyframes scroll {
-
-    from {
-
-        transform:translateX(0);
-
-    }
-
-    to {
-
-        transform:translateX(-50%);
-
-    }
-
-}
-
-
-
-@media(max-width:900px){
-
-
-.nav-links {
-
-    display:none;
-
-}
-
-
-.search {
-
-    width:160px;
-
-}
-
-
-.hero h1 {
-
-    font-size:45px;
-
-}
-
-
-.card {
-
-    width:300px;
-
-    height:180px;
-
-}
-
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-
-<nav>
-
-
-<div class="nav-left">
-
-<img src="assets/logo.png">
-
-<span>Xyro</span>
-
-</div>
-
-
-
-<div class="nav-links">
-
-
-<a class="active" href="#">
-
-<i data-lucide="home"></i>
-
-Home
-
-</a>
-
-
-<a href="#">
-
-<i data-lucide="box"></i>
-
-Products
-
-</a>
-
-
-<a href="#">
-
-<i data-lucide="sparkles"></i>
-
-Features
-
-</a>
-
-
-<a href="#">
-
-<i data-lucide="book-open"></i>
-
-Docs
-
-</a>
-
-
-</div>
-
-
-
-<div class="search">
-
-<i data-lucide="search"></i>
-
-<input placeholder="Search Xyro...">
-
-</div>
-
-
-</nav>
-
-
-
-
-
-<section class="hero">
-
-
-<h1>
-
-Built for the next generation of UK Roblox communities.
-
-</h1>
-
-
-<body>
-
-Xyro gives ERLC communities powerful tools,
-automation and systems built for modern servers.
-
-</body>
-
-
-</section>
-
-<div class="slider">
-
-<div class="showcase" id="showcase"></div>
-
-<script>
-
-
-lucide.createIcons();
-
-
-const images = [
-
-"assets/showcase/image1.png",
-
-"assets/showcase/image2.png",
-
-"assets/showcase/image3.png"
-
-];
-
-
-const showcase = document.getElementById("showcase");
-
-
-images.concat(images).forEach((image)=>{
-
-
-const card = document.createElement("div");
-
-
-card.className = "card";
-
-
-card.innerHTML = `
-
-<img src="${image}">
-
-`;
-
-
-showcase.appendChild(card);
-
-
-});
-
-
-</script>
-
-
-
-</body>
-
-</html>
